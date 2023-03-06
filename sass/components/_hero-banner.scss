@@ -1,0 +1,33 @@
+.hero-banner {
+    background: linear-gradient(to top, rgba(#000, .8) 2%, transparent) , url(../assets/images/hero-banner.jpg) center/cover;
+    height: 75vh;
+    filter: brightness(1.25);
+
+    display: grid;
+    grid-template-rows: 1fr [text-start]min-content[text-end] .5fr;
+    justify-content: center;
+
+    @include respond (tab-land) {
+        grid-template-rows: 1fr [text-start]min-content[text-end] .45fr;
+    }
+
+    @include respond (tab-port) {
+        grid-template-rows: 1fr [text-start]min-content[text-end] .4fr;
+    }
+    @include respond (phone) {
+        grid-template-rows: 1fr [text-start]min-content[text-end] .2fr;
+    }
+    @include respond(small-phone) {
+        grid-template-rows: 1fr [text-start]min-content[text-end] .2fr;
+    }
+
+    &__text {
+        grid-row: text-start / text-end;
+        padding: 0 5rem;
+        text-align: center;
+
+        @include respond(small-phone) {
+            padding: 0 1.5rem;
+        }
+    }
+}

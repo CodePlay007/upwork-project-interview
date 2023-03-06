@@ -1,0 +1,122 @@
+/*
+0 - 600px;          Phone
+600px - 900px       Tablet Potrait
+900 - 1200px        Tablet landscape
+[1200 -1800] is where our normal styles apply
+1800px +            Big Desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land 
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+Converting all px value to em because it is best recommended practice
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif; }
+  @media only screen and (max-width: 28.5em) {
+    html {
+      font-size: 40%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  box-sizing: border-box; }
+  @media only screen and (max-width: 56.25em) {
+    body {
+      padding: 0; } }
+
+.heading-primary {
+  font-size: 3rem;
+  letter-spacing: .3rem;
+  font-weight: 400;
+  color: #000; }
+  @media only screen and (max-width: 28.5em) {
+    .heading-primary {
+      font-size: 3rem; } }
+  .heading-primary--light {
+    color: #fff; }
+
+.heading-secondary {
+  font-size: 2.5rem;
+  letter-spacing: .3rem;
+  font-weight: 600;
+  color: #000; }
+
+.text-normal {
+  font-size: 2rem;
+  line-height: 1.7; }
+
+.mb-1 {
+  margin-bottom: 1rem; }
+
+.mb-2 {
+  margin-bottom: 2.5rem; }
+
+.mb-3 {
+  margin-bottom: 4rem; }
+
+.mb-4 {
+  margin-bottom: 5rem; }
+
+.mb-5 {
+  margin-bottom: 6rem; }
+
+.text-red {
+  color: red; }
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+  padding: 1rem; }
+  @media only screen and (max-width: 56.25em) {
+    .container {
+      padding: 2rem; } }
+  .container--full {
+    max-width: 100%; }
+
+.hero-banner {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 2%, transparent), url(../assets/images/hero-banner.jpg) center/cover;
+  height: 75vh;
+  filter: brightness(1.25);
+  display: grid;
+  grid-template-rows: 1fr [text-start] min-content [text-end] 0.5fr;
+  justify-content: center; }
+  @media only screen and (max-width: 75em) {
+    .hero-banner {
+      grid-template-rows: 1fr [text-start] min-content [text-end] 0.45fr; } }
+  @media only screen and (max-width: 56.25em) {
+    .hero-banner {
+      grid-template-rows: 1fr [text-start] min-content [text-end] 0.4fr; } }
+  @media only screen and (max-width: 37.5em) {
+    .hero-banner {
+      grid-template-rows: 1fr [text-start] min-content [text-end] 0.2fr; } }
+  @media only screen and (max-width: 28.5em) {
+    .hero-banner {
+      grid-template-rows: 1fr [text-start] min-content [text-end] 0.2fr; } }
+  .hero-banner__text {
+    grid-row: text-start / text-end;
+    padding: 0 5rem;
+    text-align: center; }
+    @media only screen and (max-width: 28.5em) {
+      .hero-banner__text {
+        padding: 0 1.5rem; } }

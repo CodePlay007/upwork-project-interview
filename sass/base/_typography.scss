@@ -1,0 +1,30 @@
+
+.heading-primary {
+    font-size: 3rem;
+    letter-spacing: .3rem;
+    font-weight: 400;
+    color: #000;
+
+
+    @include respond(small-phone) {
+        font-size: 3rem;
+    }
+
+    &--light {
+        color: #fff;
+    }
+}
+
+.heading-secondary {
+    font-size: 2.5rem;
+    letter-spacing: .3rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.text-normal {
+    font-size: 2rem;
+    line-height: 1.7;
+    
+
+}
